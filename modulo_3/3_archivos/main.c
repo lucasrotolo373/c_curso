@@ -35,9 +35,15 @@ int main(){
         printf("Error al abrir el archivo.\n");
         return 1;
     }
+    
     while (fgets(linea, sizeof(linea), f) != NULL){
     	printf("%s", linea);
     }
+    /* Alternativa usando fscanf
+    int n, valor;
+	while (fscanf(f, "Entrada %d: %d\n", &n, &valor) == 2) {
+    	printf("Entrada %d: %d\n", n, valor);
+	}*/
     fclose(f);
     return 0;
 }
